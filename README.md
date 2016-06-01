@@ -1,2 +1,3 @@
-# confs
-My config files
+#My config files
+- vim
+- tmux
