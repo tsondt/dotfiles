@@ -1,0 +1,10 @@
+XTerm*VT100.Translations:    #override
+Shift<Btn1Down>:	select-start()
+Shift<Btn1Motion>:	select-extend()
+Shift<Btn1Up>:		select-end(CLIPBOARD)
+
+Xft.dpi:        80
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight

@@ -1,3 +1,5 @@
+set listchars=tab:→·,trail:·,eol:¬
+set list
 syntax on
 set nocompatible              " be iMproved, required
 filetype off                  " required
