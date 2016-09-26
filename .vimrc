@@ -1,40 +1,51 @@
-set listchars=tab:→·,trail:·,eol:¬
-set list
-syntax on
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-rails'
+Plugin 'vim-airline/vim-airline'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'tomtom/tlib_vim'
+Bundle 'edkolev/tmuxline.vim'
 
-Plugin 'garbas/vim-snipmate'
-
-Plugin 'honza/vim-snippets'
-
-Plugin 'tpope/vim-rake'
-
-Plugin 'tpope/vim-bundler'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+Bundle 'edkolev/promptline.vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-set tabstop=8
+call vundle#end()
+
+filetype plugin indent on
+syntax on
+set encoding=utf-8
+" show all characters
+set list
+set listchars=tab:→·,trail:·,eol:¬
+set tabstop=2
 set expandtab
-set softtabstop=4
-set shiftwidth=4
-filetype indent on
+set softtabstop=2
+set shiftwidth=2
+set laststatus=2
+" set background=dark
+
+" fix vimdiff colors
+highlight DiffAdd             ctermfg=15 ctermbg=10 gui=none guifg=bg guibg=Red
+highlight DiffDelete          ctermfg=07 ctermbg=09 gui=none guifg=bg guibg=Red
+highlight DiffChange          ctermfg=07 ctermbg=11 gui=none guifg=bg guibg=Red
+highlight DiffText cterm=bold ctermfg=15 ctermbg=09 gui=none guifg=bg guibg=Red
+
+" highlight trailing whitespaces
+highlight ExtraWhitespace                ctermbg=09 gui=none guifg=bg guibg=Red
+match ExtraWhitespace /\s\+$/
+
+" NERDTree toggle with <C-n>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" vim-airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='base16_paraiso'
+let g:airline#extensions#tmuxline#enabled = 0
