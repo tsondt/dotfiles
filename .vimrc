@@ -16,6 +16,12 @@ Bundle 'edkolev/tmuxline.vim'
 
 Bundle 'edkolev/promptline.vim'
 
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'scrooloose/nerdcommenter'
+
+Bundle 'ctrlpvim/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -30,6 +36,17 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set laststatus=2
+set autoindent
+set scrolloff=4
+set showcmd
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set relativenumber
+set undofile
+set colorcolumn=80
 " set background=dark
 
 " fix vimdiff colors
@@ -44,6 +61,16 @@ match ExtraWhitespace /\s\+$/
 
 " NERDTree toggle with <C-n>
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" use CtrlP with ag
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " vim-airline
 let g:airline_powerline_fonts=1
