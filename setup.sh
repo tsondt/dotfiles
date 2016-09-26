@@ -24,3 +24,8 @@ echo '. ~/base16-paraiso.dark.sh' >> $HOME/.bashrc
 [[ -L "$HOME/.Xresources" ]] && rm $HOME/.Xresources
 [[ -f "$HOME/.Xresources" ]] && mv $HOME/.Xresources $HOME/.Xresources.bak
 ln -s $PWD/.Xresources $HOME/.Xresources
+[[ -L "$HOME/.dircolors" ]] && rm $HOME/.dircolors
+[[ -f "$HOME/.dircolors" ]] && mv $HOME/.dircolors $HOME/.dircolors.bak
+[[ -L "$HOME/.bash_aliases" ]] && rm $HOME/.bash_aliases
+[[ -f "$HOME/.bash_aliases" ]] && mv $HOME/.bash_aliases $HOME/.bash_aliases.bak
+
