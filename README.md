@@ -1,5 +1,5 @@
 #My dotfiles
-`bash`,`git` and `Vundle`are needed.
+`bash`, `git`, `tmux`, `vim` and `Vundle`are needed.
 - Install Vundle:
   
   ```
