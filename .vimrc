@@ -22,6 +22,8 @@ Plugin 'scrooloose/nerdcommenter'
 
 Bundle 'ctrlpvim/ctrlp.vim'
 
+Bundle 'airblade/vim-gitgutter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()
 
@@ -31,6 +33,8 @@ set encoding=utf-8
 " show all characters
 set list
 set listchars=tab:→·,trail:·,eol:¬
+set number
+"set relativenumber
 set tabstop=2
 set expandtab
 set softtabstop=2
@@ -41,10 +45,9 @@ set scrolloff=4
 set showcmd
 set wildmenu
 set wildmode=list:longest
-set visualbell
-set cursorline
+"set visualbell
+"set cursorline
 set ttyfast
-set relativenumber
 set undofile
 set colorcolumn=80
 " set background=dark
