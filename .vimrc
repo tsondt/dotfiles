@@ -12,17 +12,19 @@ Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
 
-Bundle 'edkolev/tmuxline.vim'
+Plugin 'edkolev/tmuxline.vim'
 
-Bundle 'edkolev/promptline.vim'
+Plugin 'edkolev/promptline.vim'
 
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'scrooloose/nerdcommenter'
 
-Bundle 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -79,3 +81,4 @@ endif
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16_paraiso'
 let g:airline#extensions#tmuxline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
