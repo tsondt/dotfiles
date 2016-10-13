@@ -53,6 +53,7 @@ set ttyfast
 set undofile
 set colorcolumn=80
 " set background=dark
+set timeoutlen=500 ttimeoutlen=0
 
 " fix vimdiff colors
 highlight DiffAdd             ctermfg=15 ctermbg=10 gui=none guifg=bg guibg=Red

@@ -30,4 +30,5 @@ ln -s $PWD/.dircolors $HOME/.dircolors
 [[ -L "$HOME/.bash_aliases" ]] && rm $HOME/.bash_aliases
 [[ -f "$HOME/.bash_aliases" ]] && mv $HOME/.bash_aliases $HOME/.bash_aliases.bak
 ln -s $PWD/.bash_aliases $HOME/.bash_aliases
-
+[[ -s "$HOME/.bashrc" ]] && sed -i '/xset r rate 250 100/d' $HOME/.bashrc
+echo 'xset r rate 250 100' >> $HOME/.bashrc
