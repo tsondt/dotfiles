@@ -2,10 +2,17 @@
 [[ -L $HOME/.vimrc ]] && rm $HOME/.vimrc
 [[ -f $HOME/.vimrc ]] && mv $HOME/.vimrc $HOME/.vimrc.bak
 ln -s $PWD/.vimrc $HOME/.vimrc
-vim +PluginInstall +qall
+vim +PlugInstall +qall
+[[ -L $HOME/.config/nvim/init.vim ]] && rm $HOME/.config/nvim/init.vim
+[[ -f $HOME/.config/nvim/init.vim ]] && mv $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim.bak
+ln -s $PWD/init.vim $HOME/.config/nvim/init.vim
+nvim +PlugInstall +qall
 [[ -L $HOME/.tmux.conf ]] && rm $HOME/.tmux.conf
 [[ -f $HOME/.tmux.conf ]] && mv $HOME/.tmux.conf $HOME/.tmux.conf.bak
 ln -s $PWD/.tmux.conf $HOME/.tmux.conf
+[[ -L $HOME/.tmux-default-session ]] && rm $HOME/.tmux-default-session
+[[ -f $HOME/.tmux-default-session ]] && mv $HOME/.tmux-default-session $HOME/.tmux-default-session.bak
+ln -s $PWD/.tmux-default-session $HOME/.tmux-default-session
 [[ -L $HOME/.tmuxline.conf ]] && rm $HOME/.tmuxline.conf
 [[ -f $HOME/.tmuxline.conf ]] && mv $HOME/.tmuxline.conf $HOME/.tmuxline.conf.bak
 ln -s $PWD/.tmuxline.conf $HOME/.tmuxline.conf

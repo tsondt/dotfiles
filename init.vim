@@ -1,4 +1,6 @@
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'morhetz/gruvbox'
 
 Plug 'chriskempson/base16-vim'
 
@@ -47,8 +49,8 @@ set wildmode=list:longest
 set ttyfast
 set undofile
 set colorcolumn=80
-set background=dark
-set t_Co=256
+"set background=dark
+set termguicolors
 set timeoutlen=500 ttimeoutlen=0
 
 " fix vimdiff colors

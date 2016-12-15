@@ -1,0 +1,4 @@
+new -s default
+splitw -h -p 40 irb
+splitw -v -p 50 python
+selectp -t 1
