@@ -7,6 +7,7 @@
 - `vim` (or `neovim`)
 
 - Install `vim-plug` (https://github.com/junegunn/vim-plug#installation)
+  
   Vim
   ```
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
