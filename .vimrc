@@ -22,6 +22,8 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+Plug 'rickhowe/diffchar.vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -51,14 +53,16 @@ set background=dark
 set t_Co=256
 set timeoutlen=500 ttimeoutlen=0
 
+colorscheme base16-paraiso
+
 " fix vimdiff colors
-highlight DiffAdd             ctermfg=15 ctermbg=10 gui=none guifg=bg guibg=Red
-highlight DiffDelete          ctermfg=07 ctermbg=09 gui=none guifg=bg guibg=Red
-highlight DiffChange          ctermfg=07 ctermbg=11 gui=none guifg=bg guibg=Red
-highlight DiffText cterm=bold ctermfg=15 ctermbg=09 gui=none guifg=bg guibg=Red
+highlight DiffAdd             ctermfg=NONE ctermbg=22
+highlight DiffDelete          ctermfg=NONE ctermbg=124
+highlight DiffChange          ctermfg=NONE ctermbg=22
+highlight DiffText cterm=bold ctermfg=7    ctermbg=34
 
 " highlight trailing whitespaces
-highlight ExtraWhitespace                ctermbg=09 gui=none guifg=bg guibg=Red
+highlight ExtraWhitespace                  ctermbg=09
 match ExtraWhitespace /\s\+$/
 
 " NERDTree toggle with <C-n>
@@ -82,4 +86,3 @@ let g:airline#extensions#tabline#enabled = 1
 
 command! -bang -nargs=* Find call fzf#vim#grep('grep --line-number --ignore-case --recursive --exclude=".git/*" --color="always" '.shellescape(<q-args>), 0, <bang>0)
 
-colorscheme base16-paraiso
