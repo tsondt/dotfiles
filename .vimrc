@@ -46,6 +46,7 @@ set wildmenu
 set wildmode=list:longest
 "set visualbell
 "set cursorline
+set backspace=indent,eol,start
 set ttyfast
 set undofile
 set colorcolumn=80

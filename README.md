@@ -7,18 +7,19 @@
 - `vim` (or `neovim`)
 
 ## Setup
-- Install `git`, `tmux`, `vim` (Ubuntu)
+- Install `bash`, `tmux`, `vim` & `neovim`
   ```
-  sudo apt update && sudo apt purge -y vim-tiny && sudo apt install -y git tmux vim-nox
+  brew install bash tmux vim neovim
   ```
-- Install `neovim` (Ubuntu) (https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+
+- Switch to Bash as the default shell
   ```
-  sudo add-apt-repository ppa:neovim-ppa/stable
-  sudo apt update && sudo apt install -y neovim
+  echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+  chsh -s /usr/local/bin/bash
   ```
 
 - Install `vim-plug` (https://github.com/junegunn/vim-plug#installation)
-  
+
   Vim
   ```
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -33,9 +34,4 @@
 - Then run:
   ```
   ./install.sh
-  ```
-
-- One-liner on new Lubuntu installation:
-  ```
-  sudo apt update && sudo apt purge -y vim-tiny && sudo apt install -y git tmux vim-nox software-properties-common && sudo add-apt-repository ppa:neovim-ppa/stable && sudo apt update && sudo apt install -y neovim && curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && ./install.sh
   ```
