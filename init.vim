@@ -85,3 +85,6 @@ let g:airline#extensions#tabline#enabled = 1
 command! -bang -nargs=* Find call fzf#vim#grep('grep --line-number --ignore-case --recursive --exclude=".git/*" --color="always" '.shellescape(<q-args>), 0, <bang>0)
 
 colorscheme base16-paraiso
+
+" transparent bg
+highlight Normal ctermbg=NONE guibg=NONE
