@@ -1,0 +1,24 @@
+import = ["/home/ss/.config/alacritty/themes/themes/hardhacker.toml"]
+
+[font]
+size = 10
+
+[font.bold]
+family = "HackNerdFont"
+style = "Bold"
+
+[font.bold_italic]
+family = "HackNerdFont"
+style = "Bold Italic"
+
+[font.italic]
+family = "HackNerdFont"
+style = "Italic"
+
+[font.normal]
+family = "HackNerdFont"
+style = "Regular"
+
+[window]
+decorations = "none"
+opacity = 0.85
