@@ -27,6 +27,11 @@
   cargo build --release
   sudo cp target/release/alacritty /usr/local/bin
   ```
+  - Set default terminal
+  ```
+  sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
+  sudo update-alternatives --config x-terminal-emulator
+  ```
 
 - Install `Hack` font
   ```

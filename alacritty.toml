@@ -1,7 +1,7 @@
 import = ["/home/ss/.config/alacritty/themes/themes/hardhacker.toml"]
 
 [font]
-size = 10
+size = 12
 
 [font.bold]
 family = "HackNerdFont"
@@ -22,3 +22,5 @@ style = "Regular"
 [window]
 decorations = "none"
 opacity = 0.85
+startup_mode = "Maximized"
+
