@@ -28,6 +28,16 @@
   sudo cp target/release/alacritty /usr/local/bin
   ```
 
+- Install `Hack` font
+  ```
+  mkdir -p "$HOME/.fonts"
+  cd "$HOME/.fonts"
+  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip
+  unzip Hack.zip
+  rm *.md
+  fc-cache -f "$HOME/.fonts"
+  ```
+
 - Install `git`, `tmux`, `vim`
   ```
   sudo apt update && sudo apt purge -y vim-tiny && sudo apt install -y git tmux vim-nox
