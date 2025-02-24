@@ -4,11 +4,18 @@
 ln -s "$PWD/.vimrc" "$HOME/.vimrc"
 vim +PlugInstall +PlugUpdate +qall
 
-[[ -L "$HOME/.config/nvim/init.vim" ]] && rm "$HOME/.config/nvim/init.vim"
-[[ -f "$HOME/.config/nvim/init.vim" ]] && mv "$HOME/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim.bak"
-[[ -d "$HOME/.config/nvim" ]] || mkdir -p "$HOME/.config/nvim"
-ln -s "$PWD/init.vim" "$HOME/.config/nvim/init.vim"
-nvim +PlugInstall +PlugUpdate +qall
+# [[ -L "$HOME/.config/nvim/init.vim" ]] && rm "$HOME/.config/nvim/init.vim"
+# [[ -f "$HOME/.config/nvim/init.vim" ]] && mv "$HOME/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim.bak"
+# [[ -d "$HOME/.config/nvim" ]] || mkdir -p "$HOME/.config/nvim"
+# ln -s "$PWD/init.vim" "$HOME/.config/nvim/init.vim"
+# nvim +PlugInstall +PlugUpdate +qall
+
+[[ -L "$HOME/.config/nvim" ]] && rm "$HOME/.config/nvim"
+[[ -d "$HOME/.config/nvim" ]] && mv "$HOME/.config/nvim"{,.bak}
+git clone "https://github.com/LazyVim/starter" "$HOME/.config/nvim"
+for f in $(ls $PWD/nvim/lua/plugins/*.lua); do
+  ln -s "$f" "$HOME/.config/nvim/lua/plugins/$(basename $f)"
+done
 
 [[ -L "$HOME/.tmux.conf" ]] && rm "$HOME/.tmux.conf"
 [[ -f "$HOME/.tmux.conf" ]] && mv "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak"
@@ -35,16 +42,16 @@ ln -s "$PWD/.dircolors" "$HOME/.dircolors"
 ln -s "$PWD/.bash_aliases" "$HOME/.bash_aliases"
 
 [[ -s "$HOME/.bashrc" ]] && sed -i.bak-term '/export TERM=/d' "$HOME/.bashrc" && rm "$HOME/.bashrc.bak-term"
-echo 'export TERM="xterm-256color"' >> "$HOME/.bashrc"
+echo 'export TERM="xterm-256color"' >>"$HOME/.bashrc"
 
 [[ -L "$HOME/.promptline.conf" ]] && rm "$HOME/.promptline.conf"
 [[ -f "$HOME/.promptline.conf" ]] && mv "$HOME/.promptline.conf" "$HOME/.promptline.conf.bak"
 ln -s "$PWD/.promptline.conf" "$HOME/.promptline.conf"
-[[ -s "$HOME/.bashrc" ]] && sed -i.bak-promptline '/promptline\.conf/d' "$HOME/.bashrc"  && rm "$HOME/.bashrc.bak-promptline"
-echo '. ~/.promptline.conf' >> $HOME/.bashrc
+[[ -s "$HOME/.bashrc" ]] && sed -i.bak-promptline '/promptline\.conf/d' "$HOME/.bashrc" && rm "$HOME/.bashrc.bak-promptline"
+echo '. ~/.promptline.conf' >>$HOME/.bashrc
 
 [[ -L "$HOME/base16-paraiso.dark.sh" ]] && rm "$HOME/base16-paraiso.dark.sh"
 [[ -f "$HOME/base16-paraiso.dark.sh" ]] && mv "$HOME/base16-paraiso.dark.sh" "$HOME/base16-paraiso.dark.sh.bak"
 ln -s "$PWD/base16-paraiso.dark.sh" "$HOME/base16-paraiso.dark.sh"
 [[ -s "$HOME/.bashrc" ]] && sed -i.bak-base16 '/base16-paraiso\.dark\.sh/d' "$HOME/.bashrc" && rm "$HOME/.bashrc.bak-base16"
-echo '. ~/base16-paraiso.dark.sh' >> $HOME/.bashrc
+echo '. ~/base16-paraiso.dark.sh' >>$HOME/.bashrc
